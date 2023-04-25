@@ -6,7 +6,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function evaluateResule() {
         console.log('currentValue: ', currentValue)
-        const convertedValue = currentValue.replaceAll('x', '*').replaceAll('÷', '/').replaceAll('%', '*0.01')
+        const convertedValue = currentValue.replaceAll('x', '*')
+        .replaceAll('÷', '/')
+        .replaceAll('%', '*0.01')
+        .replaceAll('sin', 'Math.sin')
+        .replaceAll('ln', 'Math.log')
+        .replaceAll('π', 'Math.PI')
+        .replaceAll('cos', 'Math.cos')
+        .replaceAll('log', 'Math.log10')
+        .replaceAll('e', 'Math.E')
+        .replaceAll('tan', 'Math.tan')
+        .replaceAll('√', 'Math.sqrt')
+
         console.log('convertedValue: ', convertedValue)
         const result = eval(convertedValue)
         currentValue = result.toString()
